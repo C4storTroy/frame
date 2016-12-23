@@ -1,9 +1,9 @@
 class Negotiation {
     constructor(date, quantity, value){
-        this._date = date;
+        this._date = new Date(date.getTime());
         this._quantity =quantity;
         this._value = value;
-        //Object.freeze(this);
+        Object.freeze(this);
     }
 
     //Method to calc volume
@@ -12,7 +12,8 @@ class Negotiation {
     }
 
     get date(){
-        return this._date;
+        //return this._date;
+        return new Date(this._date.getTime());
     }
 
     get quantity(){
