@@ -21,23 +21,18 @@ class NegotiationController{
 
         //let date = new Date(this._inputDate.value.split('-'));
         //let date = new Date(this._inputDate.value.replace(/-/g, ','));
-        let date = new Date(...
-            this._inputDate.value
-            .split('-')
-            .map((item, index) => item - index % 2)
-        );
+        //let helper = new DateHelper();
 
-        console.log(date);
+        //let date = helper.textToDate(this._inputDate.value);
+
         let negotiation = new Negotiation(
-            date,
+            DateHelper.textToDate(this._inputDate.value),
             this._inputQuantity.value,
             this._inputValue.value
         );
 
         console.log(negotiation);
-        let dayMonthYear = negotiation.date.getDate() 
-        + '/' + (negotiation.date.getMonth()+1) 
-        + '/' + negotiation.date.getFullYear();
-        console.log(dayMonthYear);
+
+        console.log(DateHelper.dateToText(negotiation.date));
     }
 }
