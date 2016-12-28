@@ -35,5 +35,9 @@ class NegotiationController{
         );
 
         console.log(negotiation);
+        let dayMonthYear = negotiation.date.getDate() 
+        + '/' + (negotiation.date.getMonth()+1) 
+        + '/' + negotiation.date.getFullYear();
+        console.log(dayMonthYear);
     }
 }
