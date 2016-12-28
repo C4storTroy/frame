@@ -11,7 +11,7 @@
 
     <h1 class="text-center">Negotiations</h1>
 
-    <form class="form">
+    <form class="form" onsubmit="negotiationController.add(event)">
 
         <div class="form-group">
             <label for="date">Date</label>
@@ -59,16 +59,9 @@
         </tfoot>
     </table>
 <script src="js/app/models/Negotiation.js"></script>
+<script src="js/app/controllers/NegotiationController.js"></script>
 <script>
-    let n1 = new Negotiation(new Date(), 5, 10);
-    //var volume = n1.getVolume();
-    //console.log(n1.date);
-    n1._quantity = 100000;
-    console.log(n1.volume);
-   // console.log(n1.date.setDate(11));
-    n1.date.setDate(12);
-    console.log(n1.date);
-
+    let negotiationController = new NegotiationController();
 </script>
 </body>
 </html>

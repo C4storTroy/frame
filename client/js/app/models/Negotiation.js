@@ -1,4 +1,5 @@
 class Negotiation {
+    
     constructor(date, quantity, value){
         this._date = new Date(date.getTime());
         this._quantity =quantity;
