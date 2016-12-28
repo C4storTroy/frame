@@ -1,3 +1,13 @@
+/**
+ * resume:
+ * controller added
+ * submit controller method
+ * Method bind to refer document (using this)
+ * date must be constructed using map, arrowfunction
+ * adjusting date - date was string
+ * spread operator - passing an array as parameter (read more)
+ * Arrow function
+ */
 class NegotiationController{
 
     constructor(){
@@ -14,13 +24,7 @@ class NegotiationController{
         let date = new Date(...
             this._inputDate.value
             .split('-')
-            .map(function(item, index){
-                return item - index % 2;
-                /**if(index == 1){
-                    return item-1;
-                }
-                return item;**/
-            })
+            .map((item, index) => item - index % 2)
         );
 
         console.log(date);
