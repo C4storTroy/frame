@@ -15,24 +15,29 @@ class NegotiationController{
         this._inputQuantity = $('#quantity');
         this._inputDate = $('#date');
         this._inputValue = $('#value');
+        this._negotiationList = new NegotiationList();
     }
     add(event){
         event.preventDefault();
 
-        //let date = new Date(this._inputDate.value.split('-'));
-        //let date = new Date(this._inputDate.value.replace(/-/g, ','));
-        //let helper = new DateHelper();
+        this._negotiationList.add(this._createNegotiation());
+        //this._negotiationList.negotiations.push(this._createNegotiation());
+        this._cleanForm();
+        
+        console.log(this._negotiationList.negotiations);
+    }
 
-        //let date = helper.textToDate(this._inputDate.value);
-
-        let negotiation = new Negotiation(
+    _createNegotiation(){
+        return new Negotiation(
             DateHelper.textToDate(this._inputDate.value),
             this._inputQuantity.value,
-            this._inputValue.value
-        );
+            this._inputValue.value);
+    }
+    _cleanForm(){
+        this._inputDate.value = '';
+        this._inputQuantity.value = 1;
+        this._inputValue.value = 0.0;
 
-        console.log(negotiation);
-
-        console.log(DateHelper.dateToText(negotiation.date));
+        this._inputDate.focus();
     }
 }
