@@ -11,7 +11,8 @@ class NegotiationList{
     }
 
     get negotiations(){
-        //return this._negotiations;
+        //return this._negotiations; secure programming
+        //creating a copy of array negotiation
         return [].concat(this._negotiations);
     }
 }

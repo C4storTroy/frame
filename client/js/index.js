@@ -1,3 +1,4 @@
+//procedural code
 var fields = [
   document.querySelector('#date'),
   document.querySelector('#quantity'),

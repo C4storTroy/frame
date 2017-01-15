@@ -23,7 +23,6 @@ class NegotiationController{
         this._negotiationList.add(this._createNegotiation());
         //this._negotiationList.negotiations.push(this._createNegotiation());
         this._cleanForm();
-        
         console.log(this._negotiationList.negotiations);
     }
 
@@ -37,7 +36,6 @@ class NegotiationController{
         this._inputDate.value = '';
         this._inputQuantity.value = 1;
         this._inputValue.value = 0.0;
-
         this._inputDate.focus();
     }
 }
